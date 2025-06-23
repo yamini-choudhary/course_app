@@ -1,0 +1,10 @@
+# Environment variables
+.env
+*.env
+
+# Node modules (applies globally)
+node_modules/
+
+# Other common ignores
+build/
+dist/
