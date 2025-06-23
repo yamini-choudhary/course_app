@@ -129,7 +129,7 @@ function Buy() {
       console.log("Payment info: ", paymentInfo);
 
       try {
-        await axios.post("http://localhost:4001/api/v1/order", paymentInfo, {
+        await axios.post( `${BACKEND_URL}/order`, paymentInfo, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
