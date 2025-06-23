@@ -14,6 +14,7 @@ import {
   AlertTriangle,
   X,
 } from "lucide-react"; 
+import { BACKEND_URL } from "../utils/utils";
 
 function OurCourses() {
   const [courses, setCourses] = useState([]);
@@ -44,7 +45,7 @@ function OurCourses() {
     const fetchCourses = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4001/api/v1/course/courses",
+          `${BACKEND_URL}/course/courses`,
           {
             withCredentials: true,
           }
@@ -82,7 +83,7 @@ function OurCourses() {
 
     try {
       const response = await axios.delete(
-        `http://localhost:4001/api/v1/course/delete/${courseToDeleteId}`,
+        `${BACKEND_URL}/course/delete/${courseToDeleteId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

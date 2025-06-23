@@ -17,6 +17,7 @@ import {
   Clock,
 } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
+import { BACKEND_URL } from "../utils/utils";
 
 function Purchases() {
   const [purchases, setPurchase] = useState([]);
@@ -49,7 +50,7 @@ function Purchases() {
     const fetchPurchases = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4001/api/v1/user/purchases",
+          `${BACKEND_URL}/user/purchases`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -72,7 +73,7 @@ function Purchases() {
   const handleLogout = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:4001/api/v1/user/logout",
+        `${BACKEND_URL}/user/logout`,
         {
           withCredentials: true,
         }

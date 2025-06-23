@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { GraduationCap, Eye, EyeOff, Mail, Lock } from "lucide-react";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { BACKEND_URL } from "../utils/utils";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -19,7 +20,7 @@ function Login() {
 
     try {
       const response = await axios.post(
-        "http://localhost:4001/api/v1/user/login",
+        `${BACKEND_URL}/user/login`,
         {
           email,
           password,

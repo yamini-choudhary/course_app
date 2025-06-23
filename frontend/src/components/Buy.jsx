@@ -13,6 +13,7 @@ import {
   Shield,
 } from "lucide-react";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
+import { BACKEND_URL } from "../utils/utils";
 
 function Buy() {
   const { courseId } = useParams();
@@ -38,7 +39,7 @@ function Buy() {
     const fetchBuyCourseData = async () => {
       try {
         const response = await axios.post(
-          `http://localhost:4001/api/v1/course/buy/${courseId}`,
+          `${BACKEND_URL}/course/buy/${courseId}`,
           {},
           {
             headers: {

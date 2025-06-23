@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { BACKEND_URL } from "../utils/utils";
 
 function AdminSignup() {
   const [firstName, setFirstName] = useState("");
@@ -30,7 +31,7 @@ function AdminSignup() {
 
     try {
       const response = await axios.post(
-        "http://localhost:4001/api/v1/admin/signup",
+       `${BACKEND_URL}/admin/signup`,
         { firstName, lastName, email, password },
         {
           withCredentials: true,

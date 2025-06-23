@@ -10,6 +10,7 @@ import {
   FileText,
   ImageIcon,
 } from "lucide-react";
+import { BACKEND_URL } from "../utils/utils";
 
 function CourseCreate() {
   const [title, setTitle] = useState("");
@@ -59,7 +60,7 @@ function CourseCreate() {
 
     try {
       const response = await axios.post(
-        "http://localhost:4001/api/v1/course/create",
+        `${BACKEND_URL}/admin/courses/create`,
         formData,
         {
           headers: {
